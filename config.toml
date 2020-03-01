@@ -1,4 +1,4 @@
-baseurl = "https://www.example.batuhanaydin.me"
+baseurl = ""
 title = "batuhanaydin"
 theme = "hugo-coder"
 languagecode = "en"
