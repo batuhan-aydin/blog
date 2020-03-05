@@ -13,6 +13,11 @@ pygmentscodefencesguesssyntax = true
 
 disqusShortname = "yourdiscussshortname"
 
+[taxonomies]
+   tag = "tags"
+   category = "categories"
+
+
 [params]
     author = "Batuhan Aydın"
     info = "Software Developer"
