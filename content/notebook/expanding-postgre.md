@@ -65,3 +65,16 @@ they group by the rows.
 ```sql
 SELECT depname, empno, salary, avg(salary) OVER (PARTITION BY depname) FROM empsalary;
 ```
+
+<h2>Table</h2>
+
+1- Default Values
+Obviously we can add default values to the tables like this 'price numeric DEFAULT 9.99'
+2- Generated Columns
+```sql
+CREATE TABLE people (
+    ...,
+    height_cm numeric,
+    height_in numeric GENERATED ALWAYS AS (height_cm / 2.54) STORED
+);
+```
