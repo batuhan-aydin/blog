@@ -2,7 +2,7 @@
 date = "2014-09-28"
 title = "Gracefully Shutdown"
 slug = "gracefully-shutdown" 
-tags = ["go","web"]
+categories = ["go","web"]
 +++
 
 Let's say you mant to shutdown a running application for a time.
