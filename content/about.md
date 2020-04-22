@@ -6,4 +6,4 @@ aliases = ["about"]
 author = "Batuhan Aydın"
 +++
 
-I'm a software developer from Turkey, i spend my time to improve my knowledge on C#/.Net Core, Go and Linux. So I will be writing posts about those topics. If you want to contact, my mail address is batuhanaydin501@gmail.com
+I'm a Software Developer from Turkey, graduated from Pamukkale University, nowadays i usually spend my time working and improving my knowledge on C#/.Net Core, Go and Linux. So I will be writing posts about those topics. If you want to contact, my mail address is batuhanaydin501@gmail.com
