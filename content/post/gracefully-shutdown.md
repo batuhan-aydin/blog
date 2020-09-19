@@ -11,39 +11,39 @@ However you don't want to cut running processes suddenly. What you want is, "fin
 This is the default way to create web server in Go.
 
 ``` go
-	srv := http.Server{
-		Addr:         ":9090",
-		Handler:      mux,
-		IdleTimeout:  120 * time.Second,
-		ReadTimeout:  1 * time.Second,
-		WriteTimeout: 1 * time.Second,
+srv := http.Server{
+    Addr:         ":9090",
+    Handler:      mux,
+    IdleTimeout:  120 * time.Second,
+    ReadTimeout:  1 * time.Second,
+    WriteTimeout: 1 * time.Second,
     }
-    
+
     err := srv.ListenAndServe()
-		if err != nil {
-			l.Fatal(err)
-		}
+        if err != nil {
+            l.Fatal(err)
+        }
 ```
+
 If you implement gracefully shutdown
 
 ``` go
-	go func() {
-		err := srv.ListenAndServe()
-		if err != nil {
-			l.Fatal(err)
-		}
-	}()
+    go func() {
+        err := srv.ListenAndServe()
+        if err != nil {
+            l.Fatal(err)
+        }
+    }()
 
-	sigChan := make(chan os.Signal)
-	signal.Notify(sigChan, os.Interrupt)
-	signal.Notify(sigChan, os.Kill)
+    sigChan := make(chan os.Signal)
+    signal.Notify(sigChan, os.Interrupt)
+    signal.Notify(sigChan, os.Kill)
 
-	sig := <-sigChan
-	l.Println("Received termination, gracefullt shutting down", sig)
+    sig := <-sigChan
+    l.Println("Received termination, gracefullt shutting down", sig)
 
-	tc, _ := context.WithTimeout(context.Background(), 30*time.Second)
-	srv.Shutdown(tc)
+    tc, _ := context.WithTimeout(context.Background(), 30*time.Second)
+    srv.Shutdown(tc)
 ```
 
-In this code, the webserver will work in another goroutine. The variable named sig blocks the main 
-routine in here. If it receives the messages we set up before, it won't block anymore.
+In this code, the webserver will work in another goroutine. The variable named sig blocks the main routine in here. If it receives the messages we set up before, it won't block anymore.
