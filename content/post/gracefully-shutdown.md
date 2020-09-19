@@ -1,8 +1,8 @@
 +++ 
-date = "2014-09-28"
+date = "2020-03-15"
 title = "Gracefully Shutdown"
 slug = "gracefully-shutdown" 
-tags = ["go","web"]
+categories = ["go","web"]
 +++
 
 Let's say you mant to shutdown a running application for a time.
